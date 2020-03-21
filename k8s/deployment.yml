@@ -28,7 +28,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
       restartPolicy: Always
 ---
 # Service base2
@@ -46,7 +46,7 @@ spec:
   ports:
     - name: https
       port: 443
-      targetPort: 80
+      targetPort: 8080
 ---
 # Ingress
 apiVersion: extensions/v1beta1
@@ -70,4 +70,4 @@ spec:
         paths:
           - backend:
               serviceName: carryon-backend
-              servicePort: 80
+              servicePort: 8080

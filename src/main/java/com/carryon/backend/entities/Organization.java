@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Organisation {
+public class Organization {
     @Id
     @GeneratedValue
     Long id;

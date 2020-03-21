@@ -9,7 +9,7 @@ ENV LC_MONETARY="de_DE.UTF-8"
 ENV LC_NUMERIC="de_DE.UTF-8"
 ENV LC_TIME="de_DE.UTF-8"
 
-COPY target/backend.jar /data/app.jar
+COPY target/backend/backend.jar /data/app.jar
 COPY conf /data/conf
 
 ADD /entrypoint.sh /entrypoint.sh

@@ -1,0 +1,73 @@
+# Deployment base2
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carryon-backend
+  namespace: carryon
+  labels:
+    app: carryon-backend
+    tier: carryon-backend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      name: carryon-backend
+      app: carryon-backend
+      tier: carryon-backend
+  template:
+    metadata:
+      labels:
+        name: carryon-backend
+        app: carryon-backend
+        tier: carryon-backend
+    spec:
+      containers:
+        - name: carryon-backend
+          image: pierreros/carryon-backend
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+      restartPolicy: Always
+---
+# Service base2
+apiVersion: v1
+kind: Service
+metadata:
+  name: carryon-backend
+  namespace: carryon
+  labels:
+    app: carryon-backend
+spec:
+  selector:
+    name: carryon-backend
+    app: carryon-backend
+  ports:
+    - name: https
+      port: 443
+      targetPort: 80
+---
+# Ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: carryon-backend
+  namespace: carryon
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls:
+    - secretName: test-tls
+      hosts:
+        - carryon-backend.pierrewilken.de
+  rules:
+    - host: carryon-backend.pierrewilken.de
+      http:
+        paths:
+          - backend:
+              serviceName: test
+              servicePort: 80

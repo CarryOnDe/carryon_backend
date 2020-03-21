@@ -20,10 +20,18 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - uses: actions/upload-artifact@v1
+      with:
+       name: backend
+       path: target/
       
   docker-build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/download-artifact@v1
+      with:
+          name: backend
+          path: target/
     - uses: actions/checkout@master
     - name: Kaniko build
       uses: outillage/kaniko-action@master

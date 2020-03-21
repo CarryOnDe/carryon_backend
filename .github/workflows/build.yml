@@ -18,8 +18,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Build with Maven
     - run: mkdir jars && cp target/*.jar jars
+    - name: Build with Maven
     - uses: actions/upload-artifact@v1
       with:
         name: backend

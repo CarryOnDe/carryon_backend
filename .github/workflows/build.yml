@@ -26,6 +26,7 @@ jobs:
        path: target/
       
   docker-build:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v1

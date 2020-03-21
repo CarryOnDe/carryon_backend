@@ -18,4 +18,10 @@ public class Organization {
     Long id;
 
     String name;
+
+    String personName;
+
+    String phone;
+
+    String email;
 }

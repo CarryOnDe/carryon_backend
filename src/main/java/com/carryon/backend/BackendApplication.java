@@ -26,7 +26,7 @@ public class BackendApplication {
 	}
 
 	public @PostConstruct void init() {
-		Organization org = new Organization(null, "Mock organization 1");
+		Organization org = new Organization(null, "Mock organization 1", "Frau Mock", "+49 9988 1122", "mock@example.org");
 		organizationRepository.save(org);
 
 		HelpRequest req1 = new HelpRequest(null, org, "Mock Request 1", "Mock Request 1 description", LocalDateTime.now(), "Ort 1");

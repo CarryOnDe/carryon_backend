@@ -29,3 +29,6 @@ hs_err_pid*
 .idea/libraries/
 
 .idea/
+
+# maven target directory
+target/

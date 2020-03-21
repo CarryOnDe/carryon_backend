@@ -31,7 +31,7 @@ jobs:
     steps:
     - uses: actions/download-artifact@v1
       with:
-          name: backend
+          name: backend/backend.jar
           path: target/
     - uses: actions/checkout@master
     - name: Kaniko build

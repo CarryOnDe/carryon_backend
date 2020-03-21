@@ -18,18 +18,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - run: mkdir jars && cp target/*.jar jars
     - name: Build with Maven
     - uses: actions/upload-artifact@v1
       with:
         name: backend
-        path: jars
+        path: target/
       
   docker-build:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-    - run: mkdir target
     - uses: actions/download-artifact@v1
       with:
           name: backend

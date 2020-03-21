@@ -1,3 +1,4 @@
+  
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
@@ -19,10 +20,11 @@ jobs:
       with:
         java-version: 11
     - name: Build with Maven
+      run: mvn -B package --file pom.xml
     - uses: actions/upload-artifact@v1
       with:
-        name: backend
-        path: target/
+       name: backend
+       path: target/
       
   docker-build:
     needs: [build]

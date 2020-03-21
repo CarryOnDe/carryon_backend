@@ -11,7 +11,6 @@ ENV LC_TIME="de_DE.UTF-8"
 
 
 COPY target/backend.jar /data/app.jar
-RUN ls /target
 COPY conf /data/conf
 
 ADD /entrypoint.sh /entrypoint.sh

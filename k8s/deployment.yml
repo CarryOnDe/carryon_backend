@@ -69,5 +69,5 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: test
+              serviceName: carryon-backend
               servicePort: 80

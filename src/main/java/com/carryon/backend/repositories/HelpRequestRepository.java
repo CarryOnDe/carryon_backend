@@ -10,6 +10,6 @@ public interface HelpRequestRepository extends JpaRepository<HelpRequest, Long> 
     List<HelpRequest> findByTitle(String title);
 
     //TODO: Umstellen auf Georeferenzierung anhand von PLZ und Entfernung
-    @Query(value = "select * from help_requests", nativeQuery = true)
+    @Query(value = "select * from help_request", nativeQuery = true)
     List<HelpRequest> findByZipAndDistance(String zip, Integer disctance);
 }

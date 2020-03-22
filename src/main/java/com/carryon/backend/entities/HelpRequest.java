@@ -31,4 +31,8 @@ public class HelpRequest {
 
     String location;
 
+    String when;
+
+    String duration;
+
 }

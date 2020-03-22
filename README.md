@@ -1,3 +1,5 @@
+![dockerhub and deployment](https://github.com/CarryOnDe/carryon_backend/workflows/dockerhub%20and%20deployment/badge.svg)
+
 <img src="https://i.imgur.com/NQfmBnWl.png"></a>
 
 # Carry On - Backend

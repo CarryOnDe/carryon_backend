@@ -1,3 +1,5 @@
+<img src="https://i.imgur.com/NQfmBnWl.png"></a>
+
 # Carry On - Backend
 
 # Contribute to the project

@@ -52,4 +52,4 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: replace --force ./k8s/deployment.yml
+        args: replace --force -f ./k8s/deployment.yml
